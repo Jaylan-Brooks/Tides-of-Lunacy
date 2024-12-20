@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 50e5cb2ba71cbf040ba494c0f542f1be
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 20ef50996e3e6f0429b345b1dc729968
+  - enabled: 1
+    path: Assets/Scenes/Tides Of Lunacy.unity
+    guid: 261a6da3072cffd47a8812b6097a3174
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: c1bcb444ac6a7494bbdc0801189cdeec
+  - enabled: 1
+    path: Assets/Scenes/Lose Screen.unity
+    guid: 17f6c183a88c35546991db600cd05ae4
+  - enabled: 0
     path: Assets/Scenes/TidesOfLunacy.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

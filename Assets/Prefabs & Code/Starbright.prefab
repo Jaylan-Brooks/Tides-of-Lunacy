@@ -169,14 +169,15 @@ MonoBehaviour:
   animator: {fileID: 0}
   bulletPrefab: {fileID: 7322044362110308016}
   firingPoint: {fileID: 7025277637446410795}
-  hitbox: {fileID: 7322044362110308016}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
+  deathPop: {fileID: 6392926170547386741, guid: 0f08fe43d9fb0f04b91e3bb2dda5261f, type: 3}
   ranged: 0
   melee: 0
+  bomb: 0
   support: 1
-  health: 11
+  health: 10
   lineOfSight: 0
 --- !u!114 &-7033486380179965121
 MonoBehaviour:
@@ -190,3 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadec5964e9f09b4c845b2ec8c2ef25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payTime: 3

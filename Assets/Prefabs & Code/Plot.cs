@@ -44,6 +44,24 @@ public class Plot : MonoBehaviour
         if (BuildManager.main.GetTidepalNumber() == 1){
             LevelManager.main.DecreaseBluerays(50);
         }
+        if (BuildManager.main.GetTidepalNumber() == 2){
+            LevelManager.main.DecreaseBluerays(100);
+        }
+        if (BuildManager.main.GetTidepalNumber() == 3){
+            LevelManager.main.DecreaseBluerays(200);
+        }
+        if (BuildManager.main.GetTidepalNumber() == 4){
+            LevelManager.main.DecreaseBluerays(250);
+        }
+        if (BuildManager.main.GetTidepalNumber() == 5){
+            LevelManager.main.DecreaseBluerays(150);
+        }
+        if (BuildManager.main.GetTidepalNumber() == 6){
+            LevelManager.main.DecreaseBluerays(200);
+        }
+        if (BuildManager.main.GetTidepalNumber() == 7){
+            LevelManager.main.DecreaseBluerays(500);
+        }
     }
 
     public void SetOn(bool onOrOff){

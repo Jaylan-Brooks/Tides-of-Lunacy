@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Blueradiate : MonoBehaviour
 {
+    [Header ("Attributes")]
+    [SerializeField] private float payTime;
+    
     private float loopTime = 0f;
     private float blueraySpawnTime;
     private int addBluerays;
@@ -15,7 +18,7 @@ public class Blueradiate : MonoBehaviour
             Deposit(deposit);
         }
         loopTime += Time.deltaTime;
-        if (loopTime > 5f){
+        if (loopTime > payTime){
             loopTime = 0f;
             RandomizeSpawnTime();
             RandomizeDeposit();
@@ -24,25 +27,25 @@ public class Blueradiate : MonoBehaviour
     }
 
     private void RandomizeSpawnTime(){
-        blueraySpawnTime = Random.value * 6;
+        blueraySpawnTime = Random.value * payTime+1;
     }
 
     private void RandomizeDeposit(){
         float random = Random.value;
         deposit = 3;
-        if (random <= 0.20f){
+        if (random <= 0.10f){
             deposit = 1;
         }
-        if (random > 0.20f && random <= 0.40f){
+        if (random > 0.10f && random <= 0.30f){
             deposit = 2;
         }
-        if (random > 0.40f && random <= 0.60f){
+        if (random > 0.30f && random <= 0.70f){
             deposit = 3;
         }
-        if (random > 0.60f && random <= 0.80f){
+        if (random > 0.70f && random <= 0.90f){
             deposit = 4;
         }
-        if (random > 0.80f){
+        if (random > 0.90f){
             deposit = 5;
         }
     }

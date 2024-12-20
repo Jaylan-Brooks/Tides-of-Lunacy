@@ -8,28 +8,33 @@ public class TidepalMind : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
-    [SerializeField] private GameObject hitbox;
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject deathPop;
 
     [Header ("Attributes")]
     [SerializeField] private bool ranged;
     [SerializeField] private bool melee;
+    [SerializeField] private bool bomb;
     [SerializeField] private bool support;
     [SerializeField] private int health;
+    [SerializeField] private string soundEffect;
     [SerializeField] private float lineOfSight;
 
     void Start(){
         animator = GetComponent<Animator>();
-        if ((!ranged && !melee) || (ranged && melee) || (support && (ranged || melee))){
+        if ((!ranged && !melee && !bomb) || (ranged && melee) || (ranged && bomb) || (melee && bomb) || (support && (ranged || melee || bomb))){
             support = true;
+            ranged = false;
+            melee = false;
+            bomb = false;
         }
     }
 
     void Update(){
-        if (ranged && !melee && !support){
+        if (ranged && !melee && !bomb && !support){
             SpotPiscinoid();
         }
-        if (health <= 0){
+        if (health <= 0 || (LevelManager.main.IsBossTime() && support)){
             Die();
         }
     }
@@ -48,16 +53,19 @@ public class TidepalMind : MonoBehaviour
 
     private void Shoot(){
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+        if (!bomb){
+            LevelManager.main.GetComponent<AudioManager>().Play(soundEffect);
+        }
     }
 
-    // void OnDrawGizmosSelected(){
-    //     Gizmos.color = Color.green;
-    //     Vector3 direction = transform.TransformDirection(Vector2.right) * lineOfSight;
-    //     Gizmos.DrawRay(transform.position, direction);
-    // }
-
     private void OnTriggerEnter2D (Collider2D collider){
-        if (melee && !ranged && !support){
+        if (bomb){
+            if (collider.gameObject.tag == "Piscinoid"){
+                Shoot();
+                Die();
+            }
+        }
+        if (melee && !ranged && !support && !bomb){
             if (collider.gameObject.tag == "Piscinoid"){
                 animator.SetBool("Piscinoid", true);
             }
@@ -65,31 +73,32 @@ public class TidepalMind : MonoBehaviour
     }
 
     private void OnTriggerExit2D (Collider2D collider){
-        if (melee && !ranged && !support){
+        if (melee && !ranged && !support && !bomb){
             if (collider.gameObject.tag == "Piscinoid"){
                 animator.SetBool("Piscinoid", false);
             }
         }
     }
 
-    private void HitboxOn(){
-        hitbox.transform.Translate(0.5f, 0.0f, 0.0f);
-	}
-
-    private void HitboxOff(){
-        hitbox.transform.Translate(-0.5f, 0.0f, 0.0f);
-	}
-
     public void TakeDamage(int damage){
 		health -= damage;
-        animator.SetInteger("Health", health);
+        if(!bomb){
+            animator.SetInteger("Health", health);  
+        }
 	}
 
     public int ReturnHealth(){
 		return health;
 	}
 
+    public string GetSoundEffect(){
+		return soundEffect;
+	}
+
     private void Die(){
+        if (!bomb){
+            GameObject burst = Instantiate(deathPop, GetComponent<Transform>().position, Quaternion.identity);   
+        }
 		Destroy(gameObject);
         return;
 	}

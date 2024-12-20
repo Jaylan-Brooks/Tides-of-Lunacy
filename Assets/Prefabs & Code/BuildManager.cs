@@ -32,11 +32,49 @@ public class BuildManager : MonoBehaviour
     public void Starbright(){
         selectedTidepal = 0;
         PlotsOn();
+        SkyPlotsOff();
     }
 
     public void Hermitt(){
         selectedTidepal = 1;
         PlotsOn();
+        SkyPlotsOff();
+    }
+
+    public void Quickclaw(){
+        selectedTidepal = 2;
+        PlotsOn();
+        SkyPlotsOff();
+    }
+
+    public void Mussels(){
+        selectedTidepal = 3;
+        PlotsOn();
+        SkyPlotsOff();
+    }
+
+    public void CorralReef(){
+        selectedTidepal = 4;
+        PlotsOn();
+        SkyPlotsOff();
+    }
+
+    public void LunarJelly(){
+        selectedTidepal = 5;
+        SkyPlotsOn();
+        PlotsOff();
+    }
+
+    public void Copterpus(){
+        selectedTidepal = 6;
+        SkyPlotsOn();
+        PlotsOff();
+    }
+
+    public void Shellshock(){
+        selectedTidepal = 7;
+        PlotsOn();
+        SkyPlotsOff();
     }
 
     public void PlotsOn(){

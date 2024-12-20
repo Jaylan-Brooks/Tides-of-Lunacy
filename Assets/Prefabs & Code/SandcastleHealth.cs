@@ -8,12 +8,12 @@ public class SandcastleHealth : MonoBehaviour
 {
     [Header ("References")]
     [SerializeField] private Image healthbar;
+    [SerializeField] private GameObject deadCastle;
 
-    private float health = 500;
-    private float maxHealth;
+    private float health = 500f;
 
     void Start(){
-      maxHealth = health;
+      health = 500f;
    }
 
     void Update(){
@@ -24,10 +24,12 @@ public class SandcastleHealth : MonoBehaviour
 
     public void TakeDamage(int damage){
 		health -= damage;
-        healthbar.fillAmount = health / maxHealth;
+        healthbar.fillAmount = health / 500f;
 	}
 
     private void Lose(){
+        deadCastle.SetActive(true);
+        LevelManager.main.GetComponent<AudioManager>().Play("Death Pop");
 		Destroy(gameObject);
         return;
 	}

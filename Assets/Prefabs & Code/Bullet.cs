@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header ("Attributes")]
+    [SerializeField] private bool unbreakable;
     [SerializeField] private float speed;
     [SerializeField] private int damage;
 
@@ -18,11 +19,25 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D (Collider2D collider){
         if (collider.gameObject.tag == "Piscinoid"){
-            collider.gameObject.GetComponent<PiscinoidMind>().TakeDamage(damage);
-            Break();
+            if (!collider.gameObject.GetComponent<PiscinoidMind>().IsInvincible()){
+                collider.gameObject.GetComponent<PiscinoidMind>().TakeDamage(damage);
+                if (!unbreakable){
+                    Break();
+                }
+            }  
         }
         if (collider.gameObject.tag == "Bullet Death"){
             Break();
+        }
+    }
+
+    private void OnTriggerExit2D (Collider2D collider){
+        if (unbreakable){
+            if (collider.gameObject.tag == "Piscinoid"){
+                if (!collider.gameObject.GetComponent<PiscinoidMind>().IsInvincible()){
+                    collider.gameObject.GetComponent<PiscinoidMind>().TakeDamage(damage);
+                }
+            }
         }
     }
 

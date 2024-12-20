@@ -59,7 +59,7 @@ public class SpawnPiscinoid : MonoBehaviour
       }
       if (currentTime > 420.0f && currentTime <= 480.0f){
          currentWave = 6;
-         timeUntilSpawnReroll = 8.0f;
+         timeUntilSpawnReroll = 7.0f;
       }
       if (currentTime > 480.0f){
          TurnOff();
@@ -85,33 +85,53 @@ public class SpawnPiscinoid : MonoBehaviour
          }
       }
       if (currentWave == 3){
-         if (random <= 0.50f){
+         if (random <= 0.40f){
             enemy = 0;
          }
-         if (random > 0.50f){
+         if (random > 0.40f && random <= 0.90f){
             enemy = 1;
          }
-        }
-      if (currentWave == 4 || currentWave == 5){
-         if (random <= 0.50f){
-            enemy = 0;
-         }
-         if (random > 0.50f && random <= 0.75f){
-            enemy = 1;
-         }
-         if (random > 0.75f){
+         if (random > 0.90f){
             enemy = 2;
          }
       }
-      if (currentWave == 6){
+      if (currentWave == 4){
+         if (random <= 0.35f){
+            enemy = 0;
+         }
+         if (random > 0.35f && random <= 0.80f){
+            enemy = 1;
+         }
+         if (random > 0.80f){
+            enemy = 2;
+         }
+      }
+      if (currentWave == 5){
          if (random <= 0.30f){
             enemy = 0;
          }
          if (random > 0.30f && random <= 0.70f){
             enemy = 1;
          }
-         if (random > 0.75f){
+         if (random > 0.70f && random <= 0.90f){
             enemy = 2;
+         }
+         if (random > 0.90f){
+            enemy = 3;
+         }
+      }
+      if (currentWave == 6){
+         if (random <= 0.25f){
+            enemy = 0;
+         }
+         if (random > 0.25f && random <= 0.55f){
+            enemy = 1;
+         }
+         if (random > 0.55f && random <= 0.85f){
+            enemy = 2;
+         }
+         if (random > 0.85f){
+            enemy = 3;
          }
       }
       return enemy;

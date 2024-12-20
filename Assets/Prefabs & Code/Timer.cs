@@ -37,6 +37,7 @@ public class Timer : MonoBehaviour
         if (hasLimit && (!countDown && currentTime >= timerLimit) || (countDown && currentTime <= timerLimit)){
             currentTime = timerLimit;
             timerText.text = "BOSS";
+            LevelManager.main.MakeBossTime();
             TurnOff();
         }
     }

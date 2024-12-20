@@ -169,14 +169,16 @@ MonoBehaviour:
   animator: {fileID: 0}
   bulletPrefab: {fileID: 5490391864275852620, guid: 678c05bc257f3d2469185d55accd415a, type: 3}
   firingPoint: {fileID: 5750782481918860959}
-  hitbox: {fileID: 3915016632229310472}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4
+  deathPop: {fileID: 234265371351040323, guid: ab19486428fe49a4d8f7679d23667e52, type: 3}
   ranged: 1
   melee: 0
+  bomb: 0
   support: 0
-  health: 11
+  health: 10
+  soundEffect: Hermitt Throw
   lineOfSight: 21
 --- !u!1 &3915016632229310472
 GameObject:
