@@ -10,7 +10,7 @@ TagManager:
   - Sand
   - Sky
   - Bullet
-  - Bullet Death
+  - NoBullet
   layers:
   - Default
   - TransparentFX

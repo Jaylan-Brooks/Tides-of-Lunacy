@@ -69,4 +69,8 @@ public class MainMenu : MonoBehaviour
     public void Quit(){
         Application.Quit();
     }
+
+    public void Secret(){
+        SceneManager.LoadScene("Beastiary");
+    }
 }

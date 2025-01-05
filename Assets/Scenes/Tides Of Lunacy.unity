@@ -3958,8 +3958,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293059298
-  m_fontColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5835,8 +5835,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293059298
-  m_fontColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8689,7 +8689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 200
+  m_text: 150
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9310,7 +9310,7 @@ Transform:
   m_GameObject: {fileID: 8472713128730523115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: -1.75, z: 0}
+  m_LocalPosition: {x: 8.5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9991,6 +9991,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  muted: 0
 --- !u!4 &7114753059840661362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1181373398491876260, guid: 9184083b38a23b343ba780c503c5732a, type: 3}
@@ -10316,9 +10317,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5094346931623833855}
   - component: {fileID: 7855380709878083453}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Bullet Death
-  m_TagString: Bullet Death
+  m_TagString: NoBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

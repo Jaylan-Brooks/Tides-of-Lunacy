@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
                 }
             }  
         }
-        if (collider.gameObject.tag == "Bullet Death"){
+        if (collider.gameObject.tag == "NoBullet"){
             Break();
         }
     }

@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose Screen.unity
     guid: 17f6c183a88c35546991db600cd05ae4
-  - enabled: 0
-    path: Assets/Scenes/TidesOfLunacy.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Beastiary.unity
+    guid: 71f8ed9356e0ad0498764be4db8f1fbc
   m_configObjects: {}

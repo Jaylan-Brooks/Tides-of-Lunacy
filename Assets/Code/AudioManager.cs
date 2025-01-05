@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public bool muted;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,10 +19,21 @@ public class AudioManager : MonoBehaviour
     }
 
     public void Play(string name){
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null){
-            return;
+        if(!muted){
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null){
+                return;
+            }
+            s.source.Play();  
         }
-        s.source.Play();
+    }
+
+    public void Mute(){
+        if (muted){
+            muted = false;
+        }
+        else {
+            muted = true;
+        }
     }
 }
